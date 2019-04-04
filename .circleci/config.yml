@@ -15,8 +15,12 @@ jobs: # a basic unit of work in a run
           command: xcodebuild
       - run:
           # build our application
-          name: Build Application
-          command: sudo date 0800
+          name: Play with Time<b>AAA</b>
+          command: sudo date 0500
+      - run:
+          # build our application
+          name: Sleep
+          command: sleep 3600         
       - run:
           name: Compress app for storage
           command: zip -r app.zip build/Release/circleci-demo-macos.app
