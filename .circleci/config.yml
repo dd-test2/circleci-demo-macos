@@ -8,11 +8,15 @@ jobs: # a basic unit of work in a run
       - run:
           # run our tests using xcode's cli tool `xcodebuild`
           name: Run Unit Tests
-          command: xcodebuild test -scheme circleci-demo-macos
+          command: xcodebuild test -scheme circleci-demo-macos 
       - run:
           # build our application
           name: Build Application
           command: xcodebuild
+      - run:
+          # build our application
+          name: Build Application
+          command: sudo date 0800
       - run:
           name: Compress app for storage
           command: zip -r app.zip build/Release/circleci-demo-macos.app
