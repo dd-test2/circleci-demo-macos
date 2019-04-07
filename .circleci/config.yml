@@ -6,6 +6,10 @@ jobs: # a basic unit of work in a run
     steps: # a series of commands to run
       - checkout  # pull down code from your version control system.
       - run:
+          # build our application
+          name: Sleep
+          command: sleep 120 
+      - run:
           # run our tests using xcode's cli tool `xcodebuild`
           name: Run Unit Tests
           command: xcodebuild test -scheme circleci-demo-macos 
@@ -16,11 +20,7 @@ jobs: # a basic unit of work in a run
       - run:
           # build our application
           name: Play with Time<b>AAA</b>
-          command: sudo date 0500
-      - run:
-          # build our application
-          name: Sleep
-          command: sleep 3600         
+          command: sudo date 0500        
       - run:
           name: Compress app for storage
           command: zip -r app.zip build/Release/circleci-demo-macos.app
